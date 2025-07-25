@@ -1,0 +1,41 @@
+2025-07-22T20:42:45.244792Z [-] Reading configuration from ['/home/sahil/Elevate-Labs-Final-Projects/cowrie/etc/cowrie.cfg.dist', '/home/sahil/Elevate-Labs-Final-Projects/cowrie/etc/cowrie.cfg']
+2025-07-22T20:42:45.410388Z [-] Python Version 3.10.12 (main, May 27 2025, 17:12:29) [GCC 11.4.0]
+2025-07-22T20:42:45.410421Z [-] Twisted Version 25.5.0
+2025-07-22T20:42:45.410430Z [-] Cowrie Version 2.6.1
+2025-07-22T20:42:45.411259Z [-] Loaded output engine: jsonlog
+2025-07-22T20:42:45.412156Z [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 25.5.0 (/usr/bin/python3 3.10.12) starting up.
+2025-07-22T20:42:45.412257Z [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.epollreactor.EPollReactor.
+2025-07-22T20:42:45.419017Z [-] CowrieSSHFactory starting on 2222
+2025-07-22T20:42:45.420056Z [cowrie.ssh.factory.CowrieSSHFactory#info] Starting factory <cowrie.ssh.factory.CowrieSSHFactory object at 0x7537c9fe2770>
+2025-07-22T20:42:45.449159Z [-] Generating new RSA keypair...
+2025-07-22T20:42:45.590251Z [-] Generating new ECDSA keypair...
+2025-07-22T20:42:45.633920Z [-] Generating new ed25519 keypair...
+2025-07-22T20:42:45.696222Z [-] Ready to accept SSH connections
+2025-07-22T20:44:01.249470Z [cowrie.ssh.factory.CowrieSSHFactory] No moduli, no diffie-hellman-group-exchange-sha1
+2025-07-22T20:44:01.249787Z [cowrie.ssh.factory.CowrieSSHFactory] No moduli, no diffie-hellman-group-exchange-sha256
+2025-07-22T20:44:01.250850Z [cowrie.ssh.factory.CowrieSSHFactory] New connection: 127.0.0.1:35944 (127.0.0.1:2222) [session: e2266322ccc2]
+2025-07-22T20:44:01.253116Z [HoneyPotSSHTransport,0,127.0.0.1] Remote SSH version: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.10
+2025-07-22T20:44:01.254295Z [HoneyPotSSHTransport,0,127.0.0.1] SSH client hassh fingerprint: e1d88fdd485f9c710074daa1fcce80a6
+2025-07-22T20:44:01.255469Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] kex alg=b'curve25519-sha256' key alg=b'ssh-ed25519'
+2025-07-22T20:44:01.255577Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] outgoing: b'aes128-ctr' b'hmac-sha2-256' b'none'
+2025-07-22T20:44:01.255663Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] incoming: b'aes128-ctr' b'hmac-sha2-256' b'none'
+2025-07-22T20:44:05.337670Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] NEW KEYS
+2025-07-22T20:44:05.352575Z [cowrie.ssh.transport.HoneyPotSSHTransport#debug] starting service b'ssh-userauth'
+2025-07-22T20:44:05.379966Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'sahil' trying auth b'none'
+2025-07-22T20:44:10.630498Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'sahil' trying auth b'password'
+2025-07-22T20:44:10.631352Z [HoneyPotSSHTransport,0,127.0.0.1] Could not read etc/userdb.txt, default database activated
+2025-07-22T20:44:10.632469Z [HoneyPotSSHTransport,0,127.0.0.1] login attempt [b'sahil'/b'root'] failed
+2025-07-22T20:44:11.640178Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'sahil' failed auth b'password'
+2025-07-22T20:44:11.640682Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] unauthorized login: ()
+2025-07-22T20:44:17.634672Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'sahil' trying auth b'password'
+2025-07-22T20:44:17.635349Z [HoneyPotSSHTransport,0,127.0.0.1] Could not read etc/userdb.txt, default database activated
+2025-07-22T20:44:17.635707Z [HoneyPotSSHTransport,0,127.0.0.1] login attempt [b'sahil'/b'skdjfsdkf'] failed
+2025-07-22T20:44:18.645247Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'sahil' failed auth b'password'
+2025-07-22T20:44:18.645633Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] unauthorized login: ()
+2025-07-22T20:44:24.538562Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'sahil' trying auth b'password'
+2025-07-22T20:44:24.539234Z [HoneyPotSSHTransport,0,127.0.0.1] Could not read etc/userdb.txt, default database activated
+2025-07-22T20:44:24.539574Z [HoneyPotSSHTransport,0,127.0.0.1] login attempt [b'sahil'/b'root'] failed
+2025-07-22T20:44:25.542784Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] b'sahil' failed auth b'password'
+2025-07-22T20:44:25.543325Z [cowrie.ssh.userauth.HoneyPotSSHUserAuthServer#debug] unauthorized login: ()
+2025-07-22T20:44:25.546362Z [cowrie.ssh.transport.HoneyPotSSHTransport#info] connection lost
+2025-07-22T20:44:25.546707Z [HoneyPotSSHTransport,0,127.0.0.1] Connection lost after 24.3 seconds
