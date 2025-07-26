@@ -2,3 +2,4 @@ cti/config.py
 venv/
    __pycache__/
    *.txt
+cti/config.py
