@@ -10,9 +10,9 @@ threats = db['threats']
 
 # Sample IOCs
 iocs = [
-    {'type': 'ip', 'value': '8.8.8.8'},
-    {'type': 'ip', 'value': '185.230.125.9'},
-    {'type': 'domain', 'value': 'example.com'}
+    {'type': 'ip', 'value': '160.191.214.174'},
+    {'type': 'ip', 'value': '45.129.139.150'},
+    {'type': 'domain', 'value': 'zupshare.com'}
 ]
 
 def fetch_virustotal(ioc):

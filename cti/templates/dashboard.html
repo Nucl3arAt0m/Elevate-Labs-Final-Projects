@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTI Dashboard</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        form { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Cyber Threat Intelligence Dashboard</h1>
+    <form method="POST">
+        <label>Enter IP or Domain:</label>
+        <input type="text" name="ioc" required>
+        <input type="submit" value="Check Threat">
+    </form>
+    {% if query_result %}
+    <h2>Query Results</h2>
+    <table>
+        <tr>
+            <th>IOC</th>
+            <th>Source</th>
+            <th>Score</th>
+            <th>Tags</th>
+            <th>Action</th>
+        </tr>
+        {% for result in query_result %}
+        <tr>
+            <td>{{ result.get('ioc', 'N/A') }}</td>
+            <td>{{ result.get('source', 'N/A') }}</td>
+            <td>
+                {% if result.get('source') == 'VirusTotal' %}
+                    Malicious: {{ result.get('data', {}).get('attributes', {}).get('last_analysis_stats', {}).get('malicious', 0) }}
+                {% elif result.get('source') == 'AbuseIPDB' %}
+                    Confidence: {{ result.get('data', {}).get('abuseConfidenceScore', 'N/A') }}%
+                {% endif %}
+            </td>
+            <td>{{ result.get('tags', [])|join(', ') }}</td>
+            <td>
+                <a href="/tag/{{ result.get('ioc') }}/malicious">Tag Malicious</a> |
+                <a href="/tag/{{ result.get('ioc') }}/benign">Tag Benign</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <h2>Recent Threats</h2>
+    <table>
+        <tr>
+            <th>IOC</th>
+            <th>Source</th>
+            <th>Score</th>
+            <th>Tags</th>
+        </tr>
+        {% for threat in threats %}
+        <tr>
+            <td>{{ threat.get('ioc', 'N/A') }}</td>
+            <td>{{ threat.get('source', 'N/A') }}</td>
+            <td>
+                {% if threat.get('source') == 'VirusTotal' %}
+                    Malicious: {{ threat.get('data', {}).get('attributes', {}).get('last_analysis_stats', {}).get('malicious', 0) }}
+                {% elif threat.get('source') == 'AbuseIPDB' %}
+                    Confidence: {{ threat.get('data', {}).get('abuseConfidenceScore', 'N/A') }}%
+                {% endif %}
+            </td>
+            <td>{{ threat.get('tags', [])|join(', ') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <img src="{{ url_for('static', filename='threat_plot.png') }}" alt="Threat Plot">
+    <a href="/export">Export to CSV</a>
+</body>
+</html>
