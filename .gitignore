@@ -1,6 +1,6 @@
-cti/config.py
+cti/config.py/
+cti/__pycache__/
 venv/
    __pycache__/
    *.txt
-cti/config.py
 vuln_scanner/__pycache__/
