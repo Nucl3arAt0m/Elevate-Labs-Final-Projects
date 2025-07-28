@@ -1,4 +1,0 @@
-src_ip
-10.0.2.2     46
-127.0.0.1    11
-Name: count, dtype: int64
